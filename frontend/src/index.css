@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Theme tokens (docs section 32-34).
+  Theme switching changes these CSS variables only — never component
+  markup or logic — so every component works in both themes.
+*/
+:root {
+  /* Dark theme is the default surface, based on Midnight Navy / Deep Purple */
+  --color-surface-base: #0F172A;
+  --color-surface: #141B2E;
+  --color-surface-raised: #1B2438;
+  --color-surface-overlay: rgba(88, 28, 135, 0.35);
+  --color-border: rgba(148, 163, 184, 0.16);
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+  --color-primary: #3B82F6;
+  --color-primary-hover: #2563EB;
+  --color-secondary: #A855F7;
+}
+
+.theme-light {
+  --color-surface-base: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #F1F5F9;
+  --color-surface-overlay: rgba(168, 85, 247, 0.08);
+  --color-border: rgba(15, 23, 42, 0.1);
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
+  --color-primary: #3B82F6;
+  --color-primary-hover: #2563EB;
+  --color-secondary: #A855F7;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-surface-base text-text-primary font-sans antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Reusable utility classes referenced by common components */
+.glass-panel {
+  @apply backdrop-blur-glass border border-border;
+  background-color: var(--color-surface-overlay);
+}
+
+.card-surface {
+  @apply bg-surface-raised border border-border rounded-xl;
+}
+
+.focus-ring {
+  @apply outline-none ring-2 border-primary;
+  --tw-ring-color: var(--color-primary);
+}
