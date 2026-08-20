@@ -226,12 +226,12 @@ The Tailwind config and `index.css` implement the documented design system:
 
 ---
 
-## 10. What's Not Included (By Design)
+## 10. What's Not Included
 
 Per the project scope, the following are intentionally left out (see docs section 57): a separate system-level role, an "Incharge" role, a separate volunteer login, payment processing, and multi-level administration. Volunteers are managed by Admin per event, not as their own account type.
 
 ---
 
-## 11. Next Steps / Extending the App
+## 11. Extending the App
 
 The architecture is modular so these can be added later without rewrites: email/SMS notifications, QR-based attendance, certificates, feedback/ratings, calendar integration, and advanced volunteer scheduling.
