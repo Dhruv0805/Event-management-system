@@ -1483,95 +1483,8 @@ Admin can update/remove assignment
 
 ---
 
-# 53. Project Development Phases
 
-## Phase 1 — Planning
-
-- Finalize requirements
-- Finalize architecture
-- Finalize design system
-- Finalize database structure
-
-## Phase 2 — UI/UX
-
-- Design common components
-- Design User pages
-- Design Admin pages
-- Implement Dark Theme
-- Implement Light Theme
-
-## Phase 3 — Frontend
-
-- React setup
-- Routing
-- Common components
-- User pages
-- Admin pages
-- Theme system
-
-## Phase 4 — Backend
-
-- Node.js setup
-- Express setup
-- API routes
-- Controllers
-- Services
-- Middleware
-
-## Phase 5 — Database
-
-- MongoDB setup
-- Mongoose models
-- Relationships
-- Validation
-
-## Phase 6 — Integration
-
-- Connect React to APIs
-- Authentication
-- Event management
-- Registration
-- Volunteer management
-
-## Phase 7 — Testing
-
-- Component testing
-- API testing
-- Authentication testing
-- Registration testing
-- Responsive testing
-- Theme testing
-
-## Phase 8 — Finalization
-
-- Bug fixing
-- Documentation
-- Presentation
-- Viva preparation
-- Deployment if required
-
----
-
-# 54. Team of 10 — Suggested Work Division
-
-| Member | Main Responsibility |
-|---|---|
-| 1 | Project coordination + integration |
-| 2 | UI/UX + design system |
-| 3 | Common React components + User Home |
-| 4 | Event listing + Event Details |
-| 5 | Authentication + Profile |
-| 6 | User Dashboard + My Events + Registration UI |
-| 7 | Admin Dashboard |
-| 8 | Admin Event + Volunteer Management |
-| 9 | Backend APIs + business logic |
-| 10 | MongoDB + testing + documentation |
-
-All members should understand the complete system for integration and viva.
-
----
-
-# 55. Version Control
+# 53. Version Control
 
 Git and GitHub should be used for collaboration.
 
@@ -1594,7 +1507,7 @@ Features should be developed independently and merged carefully.
 
 ---
 
-# 56. Future Extensibility
+# 54. Future Extensibility
 
 The architecture should allow future features such as:
 
@@ -1613,7 +1526,7 @@ These should be added as new modules rather than requiring a complete rewrite.
 
 ---
 
-# 57. What Is Intentionally Not Included
+# 55. What Is Intentionally Not Included
 
 To keep the mini-project manageable:
 
@@ -1629,7 +1542,7 @@ Volunteers are managed by Admin for individual events.
 
 ---
 
-# 58. Final Architecture Summary
+# 56. Final Architecture Summary
 
 ```text
                          EVENT MANAGEMENT SYSTEM
@@ -1658,7 +1571,7 @@ Volunteers are managed by Admin for individual events.
 
 ---
 
-# 59. Final Design Summary
+# 57. Final Design Summary
 
 ```text
 Design Style:
@@ -1709,7 +1622,7 @@ Modular + Component-Based
 
 ---
 
-# 60. Final Project Statement
+# 58. Final Project Statement
 
 The **Event Management System** is a MERN-based web application developed using a **modular, component-based architecture** with **Tailwind CSS**. The system is divided into two primary sections: **User** and **Office/Admin**. Users can discover and register for events, while Admin can manage events, registrations, users, and event-specific volunteers and their tasks.
 
