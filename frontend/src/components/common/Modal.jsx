@@ -19,7 +19,7 @@ const Modal = ({ open, onClose, title, children, footer }) => {
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className="glass-panel relative w-full max-w-lg rounded-xl p-lg shadow-2xl">
+      <div className="glass-panel relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-xl p-lg shadow-2xl">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-headline-sm text-text-primary">{title}</h2>
           <button

@@ -81,7 +81,7 @@ const EventForm = ({ initialData, categories = [], onSubmit, onCancel, loading }
         <Input label="End Time" name="endTime" type="time" value={form.endTime} onChange={handleChange} required />
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         <Input label="Venue" name="venue" value={form.venue} onChange={handleChange} required />
         <Input label="Capacity" name="capacity" type="number" min={1} value={form.capacity} onChange={handleChange} required />
       </div>

@@ -1,5 +1,5 @@
 const Select = ({ label, name, options = [], error, placeholder, className = '', ...rest }) => (
-  <div className="flex flex-col gap-1.5">
+  <div className="flex min-w-0 flex-col gap-1.5">
     {label && (
       <label htmlFor={name} className="text-label-md text-text-secondary">
         {label}

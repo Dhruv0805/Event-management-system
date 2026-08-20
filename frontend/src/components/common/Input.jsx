@@ -1,6 +1,6 @@
 // Shared text input with a consistent label, focus, and error treatment.
 const Input = ({ label, name, error, className = '', ...rest }) => (
-  <div className="flex flex-col gap-1.5">
+  <div className="flex min-w-0 flex-col gap-1.5">
     {label && (
       <label htmlFor={name} className="text-label-md text-text-secondary">
         {label}
