@@ -38,7 +38,7 @@ const AdminHeader = () => {
           className="inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 sm:px-3 py-1.5 text-label-md text-text-secondary transition-colors hover:bg-surface-raised hover:text-text-primary"
         >
           <span aria-hidden="true">🌐</span>
-          <span className="hidden sm:inline">View Site</span>
+          <span className="hidden sm:inline">Home</span>
         </Link>
         <motion.button
           whileTap={{ scale: 0.9, rotate: 15 }}

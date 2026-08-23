@@ -8,6 +8,7 @@ import Loader from '../components/common/Loader';
 import ErrorMessage from '../components/common/ErrorMessage';
 import Button from '../components/common/Button';
 import { fadeUp, staggerContainer } from '../lib/motion';
+import SponsorsSection from '../components/common/SponsorsSection';
 
 const Home = () => {
   const [events, setEvents] = useState([]);
@@ -79,6 +80,7 @@ const Home = () => {
         {!loading && error && <ErrorMessage message={error} onRetry={loadEvents} />}
         {!loading && !error && <EventList events={events} />}
       </section>
+       <SponsorsSection />
     </div>
   );
 };
