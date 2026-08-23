@@ -7,8 +7,14 @@ import EventList from '../components/events/EventList';
 import Loader from '../components/common/Loader';
 import ErrorMessage from '../components/common/ErrorMessage';
 import Button from '../components/common/Button';
+import ScrollReveal from '../components/common/ScrollReveal';
 import { fadeUp, staggerContainer } from '../lib/motion';
-import SponsorsSection from '../components/common/SponsorsSection';
+
+const highlights = [
+  { icon: '⚡', title: 'Fast registration', copy: 'Reserve your spot in a few taps, no back-and-forth.' },
+  { icon: '🗂️', title: 'Everything in one place', copy: 'Track every event you\u2019ve registered for from one dashboard.' },
+  { icon: '🔔', title: 'Stay in the loop', copy: 'Get notified when a deadline is close or a seat opens up.' },
+];
 
 const Home = () => {
   const [events, setEvents] = useState([]);
@@ -69,18 +75,33 @@ const Home = () => {
         </motion.div>
       </section>
 
+      {/* GSAP ScrollTrigger reveal — plays as the user scrolls down to
+          this row, rather than on initial page load like the hero above. */}
+      <section className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {highlights.map((item, i) => (
+          <ScrollReveal key={item.title} delay={i * 0.1}>
+            <div className="glass-panel motion-preset-fade motion-duration-500 flex h-full flex-col gap-2 rounded-xl p-md">
+              <span className="text-2xl">{item.icon}</span>
+              <h3 className="font-display text-headline-sm text-text-primary">{item.title}</h3>
+              <p className="text-body-md text-text-secondary">{item.copy}</p>
+            </div>
+          </ScrollReveal>
+        ))}
+      </section>
+
       <section className="flex flex-col gap-4">
-        <div className="flex items-center justify-between">
-          <h2 className="font-display text-headline-md text-text-primary">Upcoming Events</h2>
-          <Link to="/events" className="text-label-md text-primary hover:underline">
-            View all →
-          </Link>
-        </div>
+        <ScrollReveal>
+          <div className="flex items-center justify-between">
+            <h2 className="font-display text-headline-md text-text-primary">Upcoming Events</h2>
+            <Link to="/events" className="text-label-md text-primary hover:underline">
+              View all →
+            </Link>
+          </div>
+        </ScrollReveal>
         {loading && <Loader label="Loading events..." />}
         {!loading && error && <ErrorMessage message={error} onRetry={loadEvents} />}
         {!loading && !error && <EventList events={events} />}
       </section>
-       <SponsorsSection />
     </div>
   );
 };

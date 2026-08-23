@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
+import AnimatedCounter from '../common/AnimatedCounter';
 
 // Small metric tile used across the Admin Dashboard stat grid, with a
-// subtle gradient accent bar and lift-on-hover to feel less flat.
+// subtle gradient accent bar, lift-on-hover, and a React Spring count-up
+// so the number settles in with natural physics instead of a hard cut.
 const DashboardCard = ({ label, value, icon }) => (
   <motion.div
     whileHover={{ y: -3 }}
@@ -13,7 +15,7 @@ const DashboardCard = ({ label, value, icon }) => (
       {icon && <span className="text-3xl">{icon}</span>}
       <div>
         <p className="text-label-md text-text-muted">{label}</p>
-        <p className="font-display text-headline-md text-text-primary">{value}</p>
+        <AnimatedCounter value={value} className="font-display text-headline-md text-text-primary" />
       </div>
     </div>
   </motion.div>

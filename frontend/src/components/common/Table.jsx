@@ -17,10 +17,14 @@ const Table = ({ columns, data, emptyMessage = 'No records found.', rowKey = '_i
           </tr>
         </thead>
         <tbody>
-          {data.map((row) => (
+          {data.map((row, i) => (
             <tr
               key={row[rowKey]}
-              className="border-b border-border/60 hover:bg-surface-raised/60 transition-colors"
+              // Tailwind Motion (CSS-only): a quick per-row rise-in, staggered
+              // by index — lighter-weight than JS-driven motion for a table
+              // that can re-render often with fresh data.
+              className="motion-preset-slide-up motion-duration-300 border-b border-border/60 transition-colors hover:bg-surface-raised/60"
+              style={{ animationDelay: `${Math.min(i, 8) * 40}ms` }}
             >
               {columns.map((col) => (
                 <td key={col.key} className="px-3 py-3 text-text-secondary">

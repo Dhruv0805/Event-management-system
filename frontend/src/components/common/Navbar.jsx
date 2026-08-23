@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import Button from './Button';
+import LogoMark from './LogoMark';
 
 const navLinkClass = ({ isActive }) =>
   `relative text-label-md transition-colors hover:text-primary ${
@@ -57,7 +58,7 @@ const Navbar = () => {
     >
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-sm sm:px-lg py-3.5">
         <Link to="/" className="flex items-center gap-2 font-display text-headline-sm font-bold">
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-gradient-primary text-sm">🎟️</span>
+          <LogoMark />
           <span className="bg-gradient-primary bg-clip-text text-transparent">EventHub</span>
         </Link>
 

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import Button from '../common/Button';
+import LogoMark from '../common/LogoMark';
 
 // Admin section previously had no top bar at all — just a sidebar.
 // This gives the Office Section its own identity/orientation, distinct
@@ -25,7 +26,7 @@ const AdminHeader = () => {
       className="sticky top-0 z-30 flex items-center justify-between border-b border-border bg-surface-base/85 backdrop-blur-glass px-sm sm:px-lg py-3.5"
     >
       <Link to="/admin/dashboard" className="flex items-center gap-2 font-display text-headline-sm font-bold">
-        <span className="grid h-8 w-8 place-items-center rounded-md bg-gradient-primary text-sm">🎟️</span>
+        <LogoMark />
         <span className="bg-gradient-primary bg-clip-text text-transparent">EventHub</span>
         <span className="ml-1 rounded-full bg-surface-raised px-2 py-0.5 text-label-sm text-text-muted">
           Office
