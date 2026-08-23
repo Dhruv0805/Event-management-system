@@ -10,14 +10,15 @@ export default {
     },
     extend: {
       colors: {
-        // Brand identity tokens (see docs section 33/34)
-        'midnight-navy': '#0F172A',
-        'deep-purple': '#581C87',
-        'electric-blue': '#3B82F6',
-        'neon-violet': '#A855F7',
+        // Signature identity: warm "ticket stub" amber/coral against deep
+        // ink — reads as event/festival, not generic SaaS blue-purple.
+        ink: '#0B0E14',
+        ember: '#FF8A3D',
+        coral: '#FF4D6D',
+        teal: '#2AD9C2',
 
-        // Theme-aware semantic tokens driven by CSS variables so the
-        // same components work in both Dark and Light theme (docs section 32).
+        // Theme-aware semantic tokens driven by CSS variables (index.css)
+        // so components never branch logic on theme, only tokens change.
         surface: {
           base: 'var(--color-surface-base)',
           DEFAULT: 'var(--color-surface)',
@@ -39,22 +40,23 @@ export default {
         secondary: {
           DEFAULT: 'var(--color-secondary)',
         },
-        danger: '#EF4444',
-        success: '#22C55E',
-        warning: '#F59E0B',
+        danger: '#F0475C',
+        success: '#2AD9C2',
+        warning: '#FFB84D',
       },
       fontFamily: {
+        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display-lg': ['48px', { lineHeight: '56px', fontWeight: '800', letterSpacing: '-0.02em' }],
-        'display-lg-mobile': ['32px', { lineHeight: '40px', fontWeight: '800', letterSpacing: '-0.02em' }],
-        'headline-md': ['24px', { lineHeight: '32px', fontWeight: '700' }],
-        'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '600' }],
+        'display-lg': ['48px', { lineHeight: '54px', fontWeight: '700', letterSpacing: '-0.03em' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', fontWeight: '700', letterSpacing: '-0.02em' }],
+        'headline-md': ['24px', { lineHeight: '30px', fontWeight: '700', letterSpacing: '-0.01em' }],
+        'headline-sm': ['19px', { lineHeight: '26px', fontWeight: '600' }],
         'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
-        'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
-        'label-md': ['14px', { lineHeight: '20px', fontWeight: '600', letterSpacing: '0.01em' }],
-        'label-sm': ['12px', { lineHeight: '16px', fontWeight: '500', letterSpacing: '0.02em' }],
+        'body-md': ['15px', { lineHeight: '23px', fontWeight: '400' }],
+        'label-md': ['13.5px', { lineHeight: '20px', fontWeight: '600', letterSpacing: '0.01em' }],
+        'label-sm': ['12px', { lineHeight: '16px', fontWeight: '600', letterSpacing: '0.03em' }],
       },
       spacing: {
         xs: '8px',
@@ -65,17 +67,32 @@ export default {
         gutter: '24px',
       },
       borderRadius: {
-        sm: '4px',
-        DEFAULT: '8px',
-        md: '12px',
-        lg: '16px',
-        xl: '24px',
+        sm: '6px',
+        DEFAULT: '10px',
+        md: '14px',
+        lg: '20px',
+        xl: '28px',
       },
       backdropBlur: {
-        glass: '16px',
+        glass: '18px',
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(90deg, #3B82F6 0%, #A855F7 100%)',
+        'gradient-primary': 'linear-gradient(120deg, #FF8A3D 0%, #FF4D6D 100%)',
+        'gradient-radial-glow':
+          'radial-gradient(60% 60% at 50% 0%, rgba(255,138,61,0.16) 0%, rgba(255,77,109,0) 70%)',
+      },
+      boxShadow: {
+        glow: '0 0 0 1px rgba(255,138,61,0.15), 0 8px 30px -8px rgba(255,77,109,0.35)',
+        'glow-lg': '0 0 40px -6px rgba(255,138,61,0.45)',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 2.2s linear infinite',
       },
     },
   },

@@ -77,7 +77,7 @@ const AdminEventDetail = () => {
           ← Back to Events
         </Link>
         <div className="mt-2 flex items-center gap-3">
-          <h1 className="text-headline-md text-text-primary">{event.title}</h1>
+          <h1 className="font-display text-headline-md text-text-primary">{event.title}</h1>
           <Badge tone="blue">{event.status}</Badge>
         </div>
         <p className="text-body-md text-text-muted">

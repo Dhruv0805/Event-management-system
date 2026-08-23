@@ -29,7 +29,7 @@ const Register = () => {
   return (
     <div className="mx-auto flex max-w-md flex-col gap-6 py-xl">
       <div className="text-center">
-        <h1 className="text-headline-md text-text-primary">Create your account</h1>
+        <h1 className="font-display text-headline-md text-text-primary">Create your account</h1>
         <p className="text-body-md text-text-muted">Join to start registering for events.</p>
       </div>
 

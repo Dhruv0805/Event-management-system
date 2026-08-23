@@ -26,7 +26,7 @@ const Notifications = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-headline-md text-text-primary">Notifications</h1>
+      <h1 className="font-display text-headline-md text-text-primary">Notifications</h1>
       {notifications.length === 0 ? (
         <EmptyState title="No notifications" description="You're all caught up." />
       ) : (

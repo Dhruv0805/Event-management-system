@@ -3,37 +3,36 @@
 @tailwind utilities;
 
 /*
-  Theme tokens (docs section 32-34).
-  Theme switching changes these CSS variables only — never component
-  markup or logic — so every component works in both themes.
+  Theme tokens. Dark is the default surface: deep ink with a warm
+  amber → coral signature (the "ticket stub" identity). Light theme
+  swaps only these variables — components never branch on theme.
 */
 :root {
-  /* Dark theme is the default surface, based on Midnight Navy / Deep Purple */
-  --color-surface-base: #0F172A;
-  --color-surface: #141B2E;
-  --color-surface-raised: #1B2438;
-  --color-surface-overlay: rgba(88, 28, 135, 0.35);
-  --color-border: rgba(148, 163, 184, 0.16);
-  --color-text-primary: #F8FAFC;
-  --color-text-secondary: #CBD5E1;
-  --color-text-muted: #94A3B8;
-  --color-primary: #3B82F6;
-  --color-primary-hover: #2563EB;
-  --color-secondary: #A855F7;
+  --color-surface-base: #0B0E14;
+  --color-surface: #12161F;
+  --color-surface-raised: #191F2B;
+  --color-surface-overlay: rgba(255, 138, 61, 0.08);
+  --color-border: rgba(245, 243, 238, 0.09);
+  --color-text-primary: #F5F3EE;
+  --color-text-secondary: #C7CCD6;
+  --color-text-muted: #8890A0;
+  --color-primary: #FF8A3D;
+  --color-primary-hover: #FF7622;
+  --color-secondary: #FF4D6D;
 }
 
 .theme-light {
-  --color-surface-base: #F8FAFC;
+  --color-surface-base: #FBF9F5;
   --color-surface: #FFFFFF;
-  --color-surface-raised: #F1F5F9;
-  --color-surface-overlay: rgba(168, 85, 247, 0.08);
-  --color-border: rgba(15, 23, 42, 0.1);
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #334155;
-  --color-text-muted: #64748B;
-  --color-primary: #3B82F6;
-  --color-primary-hover: #2563EB;
-  --color-secondary: #A855F7;
+  --color-surface-raised: #F4F1EA;
+  --color-surface-overlay: rgba(255, 77, 109, 0.06);
+  --color-border: rgba(11, 14, 20, 0.09);
+  --color-text-primary: #14171F;
+  --color-text-secondary: #454B58;
+  --color-text-muted: #767D8C;
+  --color-primary: #FF7622;
+  --color-primary-hover: #E8641A;
+  --color-secondary: #E8395A;
 }
 
 html,
@@ -44,13 +43,22 @@ body,
 
 body {
   @apply bg-surface-base text-text-primary font-sans antialiased;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+::selection {
+  background-color: rgba(255, 138, 61, 0.35);
 }
 
 /* Reusable utility classes referenced by common components */
 .glass-panel {
   @apply backdrop-blur-glass border border-border;
   background-color: var(--color-surface-overlay);
+  background-color: color-mix(in srgb, var(--color-surface) 78%, transparent);
 }
 
 .card-surface {
@@ -60,4 +68,49 @@ body {
 .focus-ring {
   @apply outline-none ring-2 border-primary;
   --tw-ring-color: var(--color-primary);
+}
+
+/* Signature element: event-ticket styling used on EventCard.
+   A dashed perforation with punched notches, evoking a real ticket
+   stub — the one deliberately bold motif in an otherwise quiet UI. */
+.ticket-perforation {
+  position: relative;
+  border-top: 1.5px dashed var(--color-border);
+}
+
+.ticket-perforation::before,
+.ticket-perforation::after {
+  content: '';
+  position: absolute;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border);
+}
+
+.ticket-perforation::before {
+  left: -9px;
+}
+
+.ticket-perforation::after {
+  right: -9px;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--color-text-secondary) 0%, var(--color-primary) 50%, var(--color-text-secondary) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

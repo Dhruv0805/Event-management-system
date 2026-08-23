@@ -39,7 +39,7 @@ const Profile = () => {
 
   return (
     <div className="mx-auto flex max-w-lg flex-col gap-6">
-      <h1 className="text-headline-md text-text-primary">My Profile</h1>
+      <h1 className="font-display text-headline-md text-text-primary">My Profile</h1>
       <form onSubmit={handleSubmit} className="card-surface flex flex-col gap-4 p-lg">
         {message && <p className="rounded bg-success/10 p-3 text-label-md text-success">{message}</p>}
         {error && <p className="rounded bg-danger/10 p-3 text-label-md text-danger">{error}</p>}

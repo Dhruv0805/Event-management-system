@@ -25,18 +25,18 @@ const UserDashboard = () => {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-headline-md text-text-primary">Welcome, {account?.name?.split(' ')[0]}</h1>
+        <h1 className="font-display text-headline-md text-text-primary">Welcome, {account?.name?.split(' ')[0]}</h1>
         <p className="text-body-md text-text-muted">Here's a quick overview of your activity.</p>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div className="card-surface p-md">
           <p className="text-label-md text-text-muted">Total Registrations</p>
-          <p className="text-headline-md text-text-primary">{confirmed.length}</p>
+          <p className="font-display text-headline-md text-text-primary">{confirmed.length}</p>
         </div>
         <div className="card-surface p-md">
           <p className="text-label-md text-text-muted">Upcoming Events</p>
-          <p className="text-headline-md text-text-primary">{upcoming.length}</p>
+          <p className="font-display text-headline-md text-text-primary">{upcoming.length}</p>
         </div>
         <div className="card-surface p-md">
           <p className="text-label-md text-text-muted">Account Status</p>

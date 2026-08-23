@@ -66,7 +66,7 @@ const AdminVolunteers = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-headline-md text-text-primary">Volunteer Overview</h1>
+      <h1 className="font-display text-headline-md text-text-primary">Volunteer Overview</h1>
       <div className="sm:max-w-sm">
         <SearchBar value={search} onChange={setSearch} placeholder="Search by name, task, or event..." />
       </div>

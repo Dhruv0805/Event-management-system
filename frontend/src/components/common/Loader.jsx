@@ -4,7 +4,7 @@ const Loader = ({ label = 'Loading...', fullPage = false }) => (
       fullPage ? 'min-h-[50vh]' : 'py-10'
     }`}
   >
-    <span className="h-8 w-8 animate-spin rounded-full border-4 border-border border-t-primary" />
+    <span className="h-8 w-8 animate-spin rounded-full border-[3px] border-border border-t-primary" />
     <span className="text-body-md">{label}</span>
   </div>
 );

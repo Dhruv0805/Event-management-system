@@ -40,7 +40,7 @@ const Events = () => {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-headline-md text-text-primary">Browse Events</h1>
+        <h1 className="font-display text-headline-md text-text-primary">Browse Events</h1>
         <p className="text-body-md text-text-muted">Find and register for events that interest you.</p>
       </div>
 

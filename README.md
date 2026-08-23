@@ -115,6 +115,16 @@ npm run dev      # with nodemon, auto-restarts on changes
 npm start
 ```
 
+### Testing without a real database
+
+If you just want to try the app without setting up Atlas or a local MongoDB, you can use a temporary **in-memory MongoDB** instead — no code changes needed anywhere in `models/`, `controllers/`, or `routes/`:
+
+```bash
+npm run dev:memdb
+```
+
+This downloads a MongoDB binary once (via `mongodb-memory-server`) and runs a throwaway database in memory. All data is lost when the server stops — useful for quick testing, not for real use. To use it manually instead of the npm script, set `USE_IN_MEMORY_DB=true` in `.env`.
+
 The API runs at `http://localhost:5000/api`. Health check: `GET http://localhost:5000/api/health`.
 
 ---
@@ -226,12 +236,12 @@ The Tailwind config and `index.css` implement the documented design system:
 
 ---
 
-## 10. What's Not Included
+## 10. What's Not Included (By Design)
 
 Per the project scope, the following are intentionally left out (see docs section 57): a separate system-level role, an "Incharge" role, a separate volunteer login, payment processing, and multi-level administration. Volunteers are managed by Admin per event, not as their own account type.
 
 ---
 
-## 11. Extending the App
+## 11. Next Steps / Extending the App
 
 The architecture is modular so these can be added later without rewrites: email/SMS notifications, QR-based attendance, certificates, feedback/ratings, calendar integration, and advanced volunteer scheduling.

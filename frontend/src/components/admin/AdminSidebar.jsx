@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 const links = [
   { to: '/admin/dashboard', label: 'Dashboard', icon: '📊' },
@@ -8,20 +9,25 @@ const links = [
   { to: '/admin/users', label: 'Users', icon: '👥' },
 ];
 
-// Collapsible on mobile (docs section 45): renders as a top scroll-row
-// on small screens and a fixed left column from the md breakpoint up.
+// Collapsible on mobile: a top scroll-row on small screens, a fixed
+// left column from md up. Active link gets a sliding pill highlight.
 const AdminSidebar = () => (
-  <aside className="md:w-60 md:shrink-0 border-b md:border-b-0 md:border-r border-border">
+  <motion.aside
+    initial={{ x: -12, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ duration: 0.35, ease: 'easeOut' }}
+    className="md:w-60 md:shrink-0 border-b md:border-b-0 md:border-r border-border md:sticky md:top-[73px] md:h-[calc(100vh-73px)]"
+  >
     <nav className="flex gap-2 overflow-x-auto p-sm md:flex-col md:gap-1 md:p-md">
       {links.map((link) => (
         <NavLink
           key={link.to}
           to={link.to}
           className={({ isActive }) =>
-            `flex shrink-0 items-center gap-2 rounded px-3 py-2.5 text-label-md transition-colors ${
+            `relative flex shrink-0 items-center gap-2 rounded-md px-3 py-2.5 text-label-md transition-colors ${
               isActive
                 ? 'bg-primary/10 text-primary'
-                : 'text-text-secondary hover:bg-surface-raised'
+                : 'text-text-secondary hover:bg-surface-raised hover:text-text-primary'
             }`
           }
         >
@@ -30,7 +36,7 @@ const AdminSidebar = () => (
         </NavLink>
       ))}
     </nav>
-  </aside>
+  </motion.aside>
 );
 
 export default AdminSidebar;

@@ -1,14 +1,18 @@
+import { motion } from 'motion/react';
+
 // Generic surface card. Feature-specific cards (EventCard, DashboardCard...)
 // compose this instead of redefining surface/border/radius rules.
 const Card = ({ children, className = '', hoverGlow = false, ...rest }) => (
-  <div
+  <motion.div
+    whileHover={hoverGlow ? { y: -4 } : {}}
+    transition={{ duration: 0.25, ease: 'easeOut' }}
     className={`card-surface p-md ${
-      hoverGlow ? 'transition-shadow hover:shadow-[0_0_32px_-8px_var(--color-primary)]' : ''
+      hoverGlow ? 'transition-shadow hover:shadow-glow' : ''
     } ${className}`}
     {...rest}
   >
     {children}
-  </div>
+  </motion.div>
 );
 
 export default Card;

@@ -1,5 +1,7 @@
+import { motion } from 'motion/react';
 import EventCard from './EventCard';
 import EmptyState from '../common/EmptyState';
+import { fadeUp, staggerContainer } from '../../lib/motion';
 
 const EventList = ({ events }) => {
   if (!events || events.length === 0) {
@@ -12,11 +14,18 @@ const EventList = ({ events }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-md sm:grid-cols-2 md:grid-cols-3">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer(0.06)}
+      className="grid grid-cols-1 gap-md sm:grid-cols-2 md:grid-cols-3"
+    >
       {events.map((event) => (
-        <EventCard key={event._id} event={event} />
+        <motion.div key={event._id} variants={fadeUp}>
+          <EventCard event={event} />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

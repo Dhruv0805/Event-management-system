@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 import { fetchDashboardStats } from '../services/adminService';
 import { getErrorMessage } from '../services/api';
 import DashboardCard from '../components/admin/DashboardCard';
 import Loader from '../components/common/Loader';
 import ErrorMessage from '../components/common/ErrorMessage';
 import Table from '../components/common/Table';
+import { fadeUp, staggerContainer } from '../lib/motion';
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
@@ -35,19 +37,34 @@ const AdminDashboard = () => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-headline-md text-text-primary">Admin Dashboard</h1>
+        <h1 className="font-display text-headline-md text-text-primary">Admin Dashboard</h1>
         <Link to="/admin/events" className="text-label-md text-primary hover:underline">
           Manage Events →
         </Link>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        <DashboardCard label="Total Events" value={stats.totalEvents} icon="🗓️" />
-        <DashboardCard label="Upcoming Events" value={stats.upcomingEvents} icon="🚀" />
-        <DashboardCard label="Total Users" value={stats.totalUsers} icon="👥" />
-        <DashboardCard label="Registrations" value={stats.totalRegistrations} icon="📝" />
-        <DashboardCard label="Volunteers" value={stats.totalVolunteers} icon="🙋" />
-      </div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={staggerContainer(0.06)}
+        className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5"
+      >
+        <motion.div variants={fadeUp}>
+          <DashboardCard label="Total Events" value={stats.totalEvents} icon="🗓️" />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <DashboardCard label="Upcoming Events" value={stats.upcomingEvents} icon="🚀" />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <DashboardCard label="Total Users" value={stats.totalUsers} icon="👥" />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <DashboardCard label="Registrations" value={stats.totalRegistrations} icon="📝" />
+        </motion.div>
+        <motion.div variants={fadeUp}>
+          <DashboardCard label="Volunteers" value={stats.totalVolunteers} icon="🙋" />
+        </motion.div>
+      </motion.div>
 
       <div className="card-surface p-md">
         <h2 className="mb-3 text-headline-sm text-text-primary">Recent Registrations</h2>

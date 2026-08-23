@@ -78,7 +78,7 @@ const EventDetails = () => {
             <Badge tone="violet">{event.category?.name}</Badge>
             <Badge tone="blue">{event.status}</Badge>
           </div>
-          <h1 className="text-headline-md text-text-primary">{event.title}</h1>
+          <h1 className="font-display text-headline-md text-text-primary">{event.title}</h1>
           <p className="whitespace-pre-line text-body-md text-text-secondary">{event.description}</p>
 
           {event.rules && (

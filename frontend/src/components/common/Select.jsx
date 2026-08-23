@@ -8,7 +8,7 @@ const Select = ({ label, name, options = [], error, placeholder, className = '',
     <select
       id={name}
       name={name}
-      className={`w-full rounded bg-surface border border-border px-3.5 py-2.5 text-body-md text-text-primary focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition-colors ${className}`}
+      className={`w-full rounded-md bg-surface border border-border px-3.5 py-2.5 text-body-md text-text-primary transition-colors focus:border-primary focus:ring-2 focus:ring-primary/25 outline-none ${className}`}
       {...rest}
     >
       {placeholder && <option value="">{placeholder}</option>}

@@ -37,7 +37,7 @@ const MyEvents = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-headline-md text-text-primary">My Events</h1>
+      <h1 className="font-display text-headline-md text-text-primary">My Events</h1>
       {registrations.length === 0 ? (
         <EmptyState
           title="You haven't registered for any events yet"
