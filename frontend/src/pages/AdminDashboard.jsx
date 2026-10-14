@@ -50,19 +50,19 @@ const AdminDashboard = () => {
         className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5"
       >
         <motion.div variants={fadeUp}>
-          <DashboardCard label="Total Events" value={stats.totalEvents} icon="🗓️" />
+          <DashboardCard label="Total Events" value={stats.totalEvents} icon="" />
         </motion.div>
         <motion.div variants={fadeUp}>
-          <DashboardCard label="Upcoming Events" value={stats.upcomingEvents} icon="🚀" />
+          <DashboardCard label="Upcoming Events" value={stats.upcomingEvents} icon="" />
         </motion.div>
         <motion.div variants={fadeUp}>
-          <DashboardCard label="Total Users" value={stats.totalUsers} icon="👥" />
+          <DashboardCard label="Total Users" value={stats.totalUsers} icon="" />
         </motion.div>
         <motion.div variants={fadeUp}>
-          <DashboardCard label="Registrations" value={stats.totalRegistrations} icon="📝" />
+          <DashboardCard label="Registrations" value={stats.totalRegistrations} icon="" />
         </motion.div>
         <motion.div variants={fadeUp}>
-          <DashboardCard label="Volunteers" value={stats.totalVolunteers} icon="🙋" />
+          <DashboardCard label="Volunteers" value={stats.totalVolunteers} icon="" />
         </motion.div>
       </motion.div>
 

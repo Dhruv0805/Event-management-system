@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom';
 import { motion } from 'motion/react';
 
 const links = [
-  { to: '/admin/dashboard', label: 'Dashboard', icon: '📊' },
-  { to: '/admin/events', label: 'Events', icon: '🗓️' },
-  { to: '/admin/registrations', label: 'Registrations', icon: '📝' },
-  { to: '/admin/volunteers', label: 'Volunteers', icon: '🙋' },
-  { to: '/admin/users', label: 'Users', icon: '👥' },
+  { to: '/admin/dashboard', label: 'Dashboard', icon: '' },
+  { to: '/admin/events', label: 'Events', icon: '' },
+  { to: '/admin/registrations', label: 'Registrations', icon: '' },
+  { to: '/admin/volunteers', label: 'Volunteers', icon: '' },
+  { to: '/admin/users', label: 'Users', icon: '' },
 ];
 
 // Collapsible on mobile: a top scroll-row on small screens, a fixed
